@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colour palette — pulled directly from the travertine building */
+  --stone: #C8BA9F;
+  --travertine: #D6C9AF;
+  --charcoal: #1E1D1B;
+  --bronze: #2D2926;
+  --amber: #C8884A;
+  --muted: #8A8070;
+  --cream: #F5F0E6;
+  --offwhite: #FDFAF4;
+
+  /* Typography */
+  --serif: 'Cormorant Garamond', serif;
+  --sans: 'Jost', sans-serif;
+
+  /* Layout */
+  --nav-h: 64px;
+}
+
+/* Page transition animation */
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pageIn {
+  animation: pageIn 0.35s ease forwards;
+}
+
+/* Image hover zoom */
+.img-wrap {
+  overflow: hidden;
+}
+
+.img-wrap img {
+  transition: transform 0.7s ease;
+}
+
+.img-wrap:hover img {
+  transform: scale(1.05);
+}
+
+/* Typing indicator dots */
+@keyframes typingPulse {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.animate-typingPulse {
+  animation: typingPulse 1.2s ease-in-out infinite;
+}
+
+/* iOS safe area utilities */
+@layer utilities {
+  .safe-pb {
+    padding-bottom: max(24px, calc(env(safe-area-inset-bottom) + 24px));
+  }
+
+  .safe-px {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--travertine);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--stone);
+}
