@@ -50,7 +50,7 @@ export default function HomePage() {
             Caslano · Canton Ticino · Svizzera
           </p>
           <h1 className="font-serif text-[clamp(52px,11vw,108px)] font-light text-white leading-[0.9] mb-8">
-            Pietra,<br />luce<br />e <em className="not-italic text-white/50">natura.</em>
+            Pietra,<br />luce<br />e <em className="not-italic text-white/50">Bamba.</em>
           </h1>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[10px] sm:gap-3">
             <Button variant="primary" onClick={() => router.push('/appartamenti')}>
