@@ -10,7 +10,7 @@ const TIME_SLOTS_CALL = ['09:00–11:00', '11:00–13:00', '14:00–16:00', '16:
 const TIME_SLOTS_VISIT = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '10:00 (Sabato)', '11:00 (Sabato)']
 
 export function Modal() {
-  const { modalType, modalApt, closeModal, openModal } = useApp()
+  const { modalType, modalApt, closeModal, openModal, openChat } = useApp()
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     nome: '',
@@ -176,6 +176,16 @@ export function Modal() {
                   🏛️ Visita
                 </button>
               </div>
+
+              <button
+                onClick={() => {
+                  closeModal()
+                  openChat()
+                }}
+                className="mt-3 w-full font-sans text-[10px] tracking-[0.14em] uppercase py-3 border border-charcoal/15 text-charcoal hover:border-charcoal transition-colors"
+              >
+                💬 Hai domande?
+              </button>
             </div>
           ) : (
             // Call or Visit form
